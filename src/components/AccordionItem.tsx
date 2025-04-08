@@ -5,10 +5,9 @@ import {
   Box,
   ListItem,
 } from "@mui/material";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useStore } from "../store/store";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { blue } from "@mui/material/colors";
 import { useNavigate } from "react-router-dom";
 
 const AccordionItem = ({ provider = "" }) => {
@@ -26,7 +25,7 @@ const AccordionItem = ({ provider = "" }) => {
   return (
     <ListItem key={provider} disableGutters>
       <Accordion
-        onChange={(event, expanded) => {
+        onChange={(_event:any, expanded) => {
           if (expanded) {
             getProvider(provider, (data) => {
               setProviderInfo(data);
